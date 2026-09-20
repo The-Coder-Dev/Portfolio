@@ -3,6 +3,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --mo-track-travel: 4px;
   --background: oklch(97.33% 0.00685 88.609);
   --foreground: oklch(0.1448 0 0);
   --card: oklch(0.9583 0.0070 88.6431);

@@ -5,14 +5,14 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden">
       {/* 1. Dotted Matrix WebGL Canvas Background */}
-      <div className="absolute inset-0 z-0 opacity-6">
+      <div className="absolute inset-0 z-0 opacity-7">
         <DottedBackground
           frequency={2}
           speed={1.2}
           colors={["#EFCDB9", "#EFCDB9", "#EFCDB9"]}
           cellSize={16}
-          gamma={2}
-          paletteBias={3}
+          gamma={12}
+          paletteBias={6}
           useGlyphAtlas={true}
           characters="10010101<>/{}"
         />
@@ -29,7 +29,7 @@ export default function Hero() {
               color="#F94500"
             />
           </div>
-          <h1 className="text-8xl max-w-5xl font-semibold text-foreground font-[manrope] leading-tight">
+          <h1 className="md:text-8xl text-6xl md:max-w-5xl font-semibold text-foreground font-[manrope] leading-tight">
             I don't just write code. <span className="text-primary">I build software.</span>
           </h1>
         </div>

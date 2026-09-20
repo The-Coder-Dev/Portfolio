@@ -8,10 +8,10 @@ export default function Page() {
       <section className="w-full h-screen bg-amber-600">
 
       </section>
-      <section className="w-full h-screen bg-amber-600">
+      <section className="w-full h-screen bg-amber-400">
 
       </section>
-      <section className="w-full h-screen bg-amber-600">
+      <section className="w-full h-screen bg-amber-300">
 
       </section>
     </main>
