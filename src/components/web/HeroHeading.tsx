@@ -42,7 +42,7 @@ export default function HeroHeading({ className = "" }: HeroHeadingProps) {
 
   return (
     <motion.h1
-      className={`md:text-8xl text-6xl md:max-w-5xl font-semibold text-foreground font-[manrope] leading-[1.13] flex flex-wrap gap-x-[0.28em] gap-y-1 ${className}`}
+      className={`md:text-8xl text-5xl md:max-w-5xl font-semibold text-foreground font-[manrope] leading-[1.13] flex flex-wrap gap-x-[0.28em] gap-y-1 ${className}`}
       variants={containerVariants}
       initial="hidden"
       animate="visible"

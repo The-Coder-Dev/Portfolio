@@ -13,6 +13,7 @@ interface InteractiveBlobatarProps {
   size?: number;
   color?: string;
   className?: string;
+  showOnlineStatus?: boolean;
 }
 
 const expressionsList: Expression[] = [happy, wink, surprised, love, smug, thinking, sad, shy, scared];
@@ -20,9 +21,10 @@ const expressionsList: Expression[] = [happy, wink, surprised, love, smug, think
 export default function InteractiveBlobatar({
   name = "devs",
   hue = 35,
-  size = 40,
+  size = 40,  
   color = "#F94500",
   className = "",
+  showOnlineStatus = false,
 }: InteractiveBlobatarProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentExpression, setCurrentExpression] = useState<Expression | undefined>(undefined);
@@ -70,7 +72,6 @@ export default function InteractiveBlobatar({
     setCurrentExpression(undefined);
   };
 
-  const travelPx = `${Math.max(3.5, size * 0.05)}px`;
 
   return (
     <div
@@ -78,8 +79,8 @@ export default function InteractiveBlobatar({
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`inline-block cursor-pointer transition-transform duration-200 hover:scale-110 active:scale-95 select-none ${className}`}
-      style={{ "--mo-track-travel": travelPx } as React.CSSProperties}
+      className={`relative inline-block cursor-pointer transition-transform duration-200 hover:scale-120 active:scale-95 select-none ${className}`}
+      style={{ "--mo-track-travel": 2.5 } as React.CSSProperties}
       title="Click or hover to interact with me!"
     >
       <Blobatar
@@ -90,6 +91,17 @@ export default function InteractiveBlobatar({
         color={color}
         expression={currentExpression}
       />
+      {showOnlineStatus && (
+        <span
+          className="absolute top-[20%] right-[12%] flex items-center justify-center rounded-full bg-emerald-500 ring-2 ring-background shadow-sm z-10 pointer-events-none"
+          style={{
+            width: "15px",
+            height: "15px",
+          }}
+        >
+          <span className="h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+        </span>
+      )}
     </div>
   );
 }
