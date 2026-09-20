@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { MessageCircle } from "lucide-react";
 import { Button } from "../ui/button";
 import InteractiveBlobatar from "./InteractiveBlobatar";

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { X, Menu, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "../ui/button";

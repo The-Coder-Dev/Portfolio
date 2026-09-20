@@ -1,19 +1,14 @@
 import React from "react";
 import Hero from "@/components/Hero";
+import ProjectSection from "@/components/Projects";
+import LearningSection from "@/components/learning-section";
 
 export default function Page() {
   return (
     <main className="w-full min-h-screen">
       <Hero />
-      <section className="w-full h-screen bg-amber-600">
-        
-      </section>
-      <section className="w-full h-screen bg-amber-400">
-
-      </section>
-      <section className="w-full h-screen bg-amber-300">
-
-      </section>
+      <ProjectSection />
+      <LearningSection />
     </main>
   );
 }
