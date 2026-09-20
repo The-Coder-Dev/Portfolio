@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/web/Navbar";
-import LenisProvider from "@/components/web/LenisProvider";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+import Navbar from "@/components/web/Navbar";
+
+import LenisProvider from "@/components/web/LenisProvider";
+import { ThemeProvider } from "@/components/web/theme-provider";
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 
 const geistMono = Geist_Mono({
@@ -26,8 +29,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-background">
         <LenisProvider>
-        <Navbar />
-        {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem >
+            <Navbar />
+            {children}
+          </ThemeProvider>
         </LenisProvider>
       </body>
     </html>

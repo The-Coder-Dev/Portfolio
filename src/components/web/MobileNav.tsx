@@ -30,7 +30,7 @@ export default function MobileNav({ links, children }: MobileNavProps) {
         <div className="flex md:hidden items-center">
           <button
             type="button"
-            className="p-2 text-neutral-700 hover:text-black rounded-lg transition-colors cursor-pointer focus:outline-none"
+            className="p-2 text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white rounded-lg transition-colors cursor-pointer focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
@@ -55,7 +55,7 @@ export default function MobileNav({ links, children }: MobileNavProps) {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
-            className="md:hidden w-full overflow-hidden border-t border-neutral-200/80 bg-white/95 backdrop-blur-md"
+            className="md:hidden w-full overflow-hidden border-t border-neutral-200/80 dark:border-neutral-800/80 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md"
           >
             <div className="flex flex-col gap-2 p-4">
               {links.map((link, index) => (
@@ -69,7 +69,7 @@ export default function MobileNav({ links, children }: MobileNavProps) {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-2.5 rounded-xl text-neutral-800 hover:text-black hover:bg-neutral-100/80 font-geist text-xs uppercase tracking-widest font-semibold transition-all"
+                    className="block px-4 py-2.5 rounded-xl text-neutral-800 dark:text-neutral-200 hover:text-black dark:hover:text-white hover:bg-neutral-100/80 dark:hover:bg-neutral-800/80 font-geist text-xs uppercase tracking-widest font-semibold transition-all"
                   >
                     {link.label}
                   </Link>

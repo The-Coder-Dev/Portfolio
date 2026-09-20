@@ -3,6 +3,7 @@ import { MessageCircle } from "lucide-react";
 import { Button } from "../ui/button";
 import InteractiveBlobatar from "./InteractiveBlobatar";
 import MobileNav from "./MobileNav";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
     { href: "/", label: "Home", id: 1 },
@@ -13,14 +14,14 @@ const links = [
 
 const Navbar = () => {
     return (
-        <header className="w-full px-4 sm:px-6 py-4 absolute top-0 z-999">
-            <nav style={{viewTransitionName: "navbar"}} className="w-full max-w-350 mx-auto bg-white/95 backdrop-blur-md rounded-2xl border border-neutral-200/80 shadow-sm transition-all duration-300 overflow-hidden">
+        <header className="w-full px-4 sm:px-6 py-4 absolute top-0 z-99">
+            <nav style={{viewTransitionName: "navbar"}} className="w-full max-w-350 mx-auto bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 shadow-sm transition-all duration-300 overflow-hidden">
                 <MobileNav links={links}>
                     {/* Brand / Logo */}
                     <Link href="/">
                         <div className="flex items-center gap-3">
                             <InteractiveBlobatar name="devs" size={38} />
-                            <span className="font-sans font-bold tracking-tight text-neutral-900 text-lg">
+                            <span className="font-sans font-bold tracking-tight text-neutral-900 dark:text-neutral-100 text-lg">
                                 Dev Sharma
                             </span>
                         </div>
@@ -33,7 +34,7 @@ const Navbar = () => {
                                 <Link
                                     key={link.id}
                                     href={link.href}
-                                    className="text-neutral-700 hover:text-black font-geist text-xs uppercase tracking-widest font-semibold transition-colors py-1 relative group"
+                                    className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white font-geist text-xs uppercase tracking-widest font-semibold transition-colors py-1 relative group"
                                 >
                                     {link.label}
                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -41,9 +42,13 @@ const Navbar = () => {
                             ))}
                         </div>
 
-                        <Button className="cursor-pointer rounded-xl">
+                        <div className="flex gap-2">
+                            <Button className="cursor-pointer rounded-xl">
                             <MessageCircle /> Ask me Anything
                         </Button>
+
+                        <ThemeToggle />
+                        </div>
                     </div>
                 </MobileNav>
             </nav>

@@ -61,7 +61,7 @@ export default function Hero() {
           <motion.div initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-row items-center gap-5 border-t-2 border-black/5 max-w-xl mt-5">
+            className="flex flex-row items-center gap-5 border-t-2 border-black/5 dark:border-white/10 max-w-xl mt-5">
             <Button variant={"default"} size={"lg"} className="mt-5 rounded-lg cursor-pointer">
               View Projects
               <ArrowRight />
