@@ -1,0 +1,52 @@
+import Link from "next/link";
+import { MessageCircle } from "lucide-react";
+import { Button } from "../ui/button";
+import InteractiveBlobatar from "./InteractiveBlobatar";
+import MobileNav from "./MobileNav";
+
+const links = [
+    { href: "#", label: "Home", id: 1 },
+    { href: "#", label: "About", id: 2 },
+    { href: "#", label: "Projects", id: 3 },
+    { href: "#", label: "Contact", id: 4 },
+];
+
+const Navbar = () => {
+    return (
+        <header className="w-full px-4 sm:px-6 py-4 absolute top-0 z-999">
+            <nav className="w-full max-w-350 mx-auto bg-white/95 backdrop-blur-md rounded-2xl border border-neutral-200/80 shadow-sm transition-all duration-300 overflow-hidden">
+                <MobileNav links={links}>
+                    {/* Brand / Logo */}
+                    <div className="flex items-center gap-3">
+                        <InteractiveBlobatar name="devs" size={38} />
+                        <span className="font-geist font-bold tracking-tight text-neutral-900 text-lg">
+                            Dev Sharma
+                        </span>
+                    </div>
+
+                    {/* Desktop Navigation Links & CTA */}
+                    <div className="hidden md:flex items-center gap-6">
+                        <div className="flex items-center gap-6">
+                            {links.map((link) => (
+                                <Link
+                                    key={link.id}
+                                    href={link.href}
+                                    className="text-neutral-700 hover:text-black font-geist text-xs uppercase tracking-widest font-semibold transition-colors py-1 relative group"
+                                >
+                                    {link.label}
+                                    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full" />
+                                </Link>
+                            ))}
+                        </div>
+
+                        <Button className="cursor-pointer rounded-xl">
+                            <MessageCircle /> Ask me Anything
+                        </Button>
+                    </div>
+                </MobileNav>
+            </nav>
+        </header>
+    );
+};
+
+export default Navbar;
