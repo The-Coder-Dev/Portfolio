@@ -1,5 +1,6 @@
 import DottedBackground from "@/components/originkit/ui/dotmatrix-variant-5";
 import InteractiveBlobatar from "@/components/web/InteractiveBlobatar";
+import HeroHeading from "@/components/web/HeroHeading";
 
 export default function Hero() {
   return (
@@ -29,9 +30,8 @@ export default function Hero() {
               color="#F94500"
             />
           </div>
-          <h1 className="md:text-8xl text-6xl md:max-w-5xl font-semibold text-foreground font-[manrope] leading-tight">
-            I don't just write code. <span className="text-primary">I build software.</span>
-          </h1>
+          <HeroHeading />
+          <p className="text-foreground">Developer focused on web applications, SaaS, AI-assisted development, and backend engineering.</p>
         </div>
       </div>
     </section>

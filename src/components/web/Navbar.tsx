@@ -14,13 +14,13 @@ const links = [
 const Navbar = () => {
     return (
         <header className="w-full px-4 sm:px-6 py-4 absolute top-0 z-999">
-            <nav className="w-full max-w-350 mx-auto bg-white/95 backdrop-blur-md rounded-2xl border border-neutral-200/80 shadow-sm transition-all duration-300 overflow-hidden">
+            <nav style={{viewTransitionName: "navbar"}} className="w-full max-w-350 mx-auto bg-white/95 backdrop-blur-md rounded-2xl border border-neutral-200/80 shadow-sm transition-all duration-300 overflow-hidden">
                 <MobileNav links={links}>
                     {/* Brand / Logo */}
                     <Link href="/">
                         <div className="flex items-center gap-3">
                             <InteractiveBlobatar name="devs" size={38} />
-                            <span className="font-geist font-bold tracking-tight text-neutral-900 text-lg">
+                            <span className="font-sans font-bold tracking-tight text-neutral-900 text-lg">
                                 Dev Sharma
                             </span>
                         </div>
